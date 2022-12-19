@@ -146,5 +146,3 @@ function deleteScene() {
 
     window.scrollTo(0,coord)
 }
-
-fsds
