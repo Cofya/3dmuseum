@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>3D музей</title>
+</head>
+
+<body>
+    <div class="addButons">
+        <h1 class="imgText">Агаты</h1>
+        <div class="icons">
+            <div class="imgWrapper">
+                <img src="icons/icon_agat1.png" alt="агат" onclick="main('objs/agat1.obj', 'textures/agat1.jpg')">
+            </div>
+            <div class="imgWrapper">
+                <img src="icons/icon_agat2.png" alt="агат" onclick="main('objs/agat2.obj', 'textures/agat2.jpg')">
+            </div>
+            <div class="imgWrapper">
+                <img src="icons/icon_agat3.png" alt="агат" onclick="main('objs/agat3.obj', 'textures/agat3.jpg')">
+            </div>
+        </div>
+        <div class="icons">
+            <div>
+                <h1 class="imgText">Горные хрустали</h1>
+                <div class="imgWrapper">
+                    <img src="icons/icon_crystal1.png" alt="хрусталь"
+                        onclick="main('objs/crystal1.obj', 'textures/crystal1.jpg')">
+                    <img src="icons/icon_crystal2.png" alt="хрусталь"
+                        onclick="main('objs/crystal2.obj', 'textures/crystal2.jpg')">
+                </div>
+            </div>
+        </div>
+        <div class="icons">
+            <div>
+                <h1 class="imgText">Аметист</h1>
+                <div class="imgWrapper">
+                    <img src="icons/icon_amethyst1.png" alt="агат"
+                        onclick="main('objs/amethyst1.obj', 'textures/amethyst1.jpg')">
+                </div>
+            </div>
+            <div>
+                <h1 class="imgText">n mineral</h1>
+                <div class="imgWrapper">
+                    <img src=" icons/icon_nmaterial.png" alt="nmaterial"
+                        onclick="main('objs/nmineral.obj', 'textures/nmineral.jpg')">
+                </div>
+            </div>
+            <div>
+                <h1 class="imgText">Роза пустыни</h1>
+                <div class="imgWrapper">
+                    <img src="icons/icon_desertRose1.png" alt="роза пустыни"
+                        onclick="main('objs/desertRose1.obj','textures/desertRose1.jpg')">
+                </div>
+            </div>
+            <br>
+            <div>
+                <h1 class="imgText">Лавовые камни</h1>
+                <div class="imgWrapper">
+                    <img src="icons/icon_lavaStone1.png" alt="лавовый камень"
+                        onclick="main('objs/lavaStone1.obj','textures/lavaStone1.jpg')" style="margin-right: 3px;">
+                    <img src="icons/icon_lavaStone2.png" alt="лавовый камень"
+                        onclick="main('objs/lavaStone2.obj','textures/lavaStone2.jpg')">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="deleteScene()" class="show" id="removeButton" style="font-size: large;">Вернуться</button>
+
+    <button id="moveModels" class="show" onclick="toggleControls()" style="font-size: large;">
+        Авто вращение
+    </button>
+
+    <div class='canvas-container'></div>
+
+    <script src='https://unpkg.com/three@0.99.0/build/three.min.js'></script>
+    <script src='https://unpkg.com/three@0.99.0/examples/js/loaders/OBJLoader.js'></script>
+    <script src='https://unpkg.com/three@0.99.0/examples/js/controls/OrbitControls.js'></script>
+    <script src="3dScript.js"></script>
+    <script src="pageScript.js"></script>
+</body>
+
+</html>

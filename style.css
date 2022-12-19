@@ -1,0 +1,39 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    z-index: 0;
+}
+
+button {
+    padding: 2px;
+    margin: 1px;
+}
+
+.show {
+    display: none;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+}
+
+img {
+    position: static;
+    border: 2px dashed black;
+    width: 270px;
+}
+.imgText {
+    text-align: center;
+    width: 100%
+}
