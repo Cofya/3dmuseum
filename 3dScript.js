@@ -98,7 +98,7 @@ function main(model, texture) {
     moveButton.classList.toggle("show");
     removeButton.classList.toggle("show");
     addButton.classList.toggle("show");
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
     document.querySelector(".canvas-container").classList.remove("show");
     document.querySelector('.canvas-container').appendChild(renderer.domElement);
 
@@ -130,7 +130,7 @@ function toggleControls() {
 // удаляет объект и скрывает всякое
 function deleteScene() {
     scene.remove(object);
-    texture = new THREE.Texture()  
+    texture = new THREE.Texture()
     /*обнуление нынешней текстуры, чтобы при загрузке следующего объекта
      не было кривой текстуры*/
     //славно бы было сделать добавление объекта после всех действий, но лан
@@ -144,5 +144,5 @@ function deleteScene() {
     removeButton.classList.toggle("show");
     addButton.classList.toggle("show");
 
-    window.scrollTo(0,coord)
+    window.scrollTo(0, coord)
 }

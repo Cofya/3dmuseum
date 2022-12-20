@@ -27,9 +27,9 @@
             <div>
                 <h1 class="imgText">Горные хрустали</h1>
                 <div class="imgWrapper">
-                    <img src="icons/icon_crystal1.png" alt="хрусталь"
+                    <img src="icons/icon_crystal1.png" alt="хрусталь" style="margin-right: 4px;"
                         onclick="main('objs/crystal1.obj', 'textures/crystal1.jpg')">
-                    <img src="icons/icon_crystal2.png" alt="хрусталь"
+                    <img src="icons/icon_crystal2.png" alt="хрусталь" style="margin-left: 4px;"
                         onclick="main('objs/crystal2.obj', 'textures/crystal2.jpg')">
                 </div>
             </div>
@@ -43,10 +43,10 @@
                 </div>
             </div>
             <div>
-                <h1 class="imgText">n mineral</h1>
+                <h1 class="imgText">Сердолик</h1>
                 <div class="imgWrapper">
-                    <img src=" icons/icon_nmaterial.png" alt="nmaterial"
-                        onclick="main('objs/nmineral.obj', 'textures/nmineral.jpg')">
+                    <img src=" icons/icon_cornelian.png" alt="сердолик"
+                        onclick="main('objs/cornelian.obj', 'textures/cornelian.jpg')">
                 </div>
             </div>
             <div>
@@ -56,14 +56,26 @@
                         onclick="main('objs/desertRose1.obj','textures/desertRose1.jpg')">
                 </div>
             </div>
-            <br>
             <div>
                 <h1 class="imgText">Лавовые камни</h1>
                 <div class="imgWrapper">
                     <img src="icons/icon_lavaStone1.png" alt="лавовый камень"
-                        onclick="main('objs/lavaStone1.obj','textures/lavaStone1.jpg')" style="margin-right: 3px;">
-                    <img src="icons/icon_lavaStone2.png" alt="лавовый камень"
+                        onclick="main('objs/lavaStone1.obj','textures/lavaStone1.jpg')" style="margin-right: 4px;">
+                    <img src="icons/icon_lavaStone2.png" alt="лавовый камень" style="margin-left: 4px;"
                         onclick="main('objs/lavaStone2.obj','textures/lavaStone2.jpg')">
+                </div>
+            </div>
+            <!-- <div>
+                <h1 class="imgText">Обсидиан</h1>
+                <div class="imgWrapper">
+                    <button onclick="main('objs/obsidian1.obj', 'textures/obsidian2.png')">лялля</button>
+                </div>
+            </div> -->
+            <div>
+                <h1 class="imgText">Авачит</h1>
+                <div class="imgWrapper">
+                    <img src="icons/icon_avachit1.png" alt="авачит"
+                        onclick="main('objs/avachit1.obj', 'textures/avachit1.jpg')">
                 </div>
             </div>
         </div>
@@ -77,11 +89,12 @@
 
     <div class='canvas-container'></div>
 
+    <script src="pageScript.js"></script>
+
     <script src='https://unpkg.com/three@0.99.0/build/three.min.js'></script>
     <script src='https://unpkg.com/three@0.99.0/examples/js/loaders/OBJLoader.js'></script>
     <script src='https://unpkg.com/three@0.99.0/examples/js/controls/OrbitControls.js'></script>
     <script src="3dScript.js"></script>
-    <script src="pageScript.js"></script>
 </body>
 
 </html>
