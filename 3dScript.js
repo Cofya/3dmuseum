@@ -98,7 +98,6 @@ function main(model, texture) {
     moveButton.classList.toggle("show");
     removeButton.classList.toggle("show");
     addButton.classList.toggle("show");
-    window.scrollTo(0, 0)
     document.querySelector(".canvas-container").classList.remove("show");
     document.querySelector('.canvas-container').appendChild(renderer.domElement);
 
@@ -110,12 +109,14 @@ function main(model, texture) {
     if (animateNoUse) {
         animate();
         animateNoUse = false;
+        window.scrollTo(0, 0)
         return;
     }
     /* Данный иф нужен, чтобы объекты не начинали вращаться быстрее.
     Иначе бы каждый раз использовался animate() и в секунду был бы
     поворот на0.005 * n радиан, где n - количество использования main()*/
     render();
+    window.scrollTo(0, 0)
 }
 function toggleControls() {
     button = document.querySelector("#moveModels");
