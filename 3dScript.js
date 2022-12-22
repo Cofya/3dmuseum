@@ -22,6 +22,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 let controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enablePan = false;
+controls.minDistance = 3;
+controls.maxDistance = 20;
 // controls.minPolarAngle = Math.PI * 1 / 4;
 // controls.maxPolarAngle = Math.PI * 3 / 4;
 
@@ -66,8 +68,8 @@ function animate() {
     if (!permissionControls) {
         object.rotation.y -= 0.005;
     }
-    controls.update();
     render();
+    controls.update();
 }
 
 function render() {
@@ -80,17 +82,15 @@ async function loadTexture(href) {
         texture.image = image;
         texture.needsUpdate = true;
     });
-    return new Promise((resolve, reject) => {
-        resolve(1);
-    });
 }
 
-// const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-// const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
-// const cube = new THREE.Mesh( geometry, material );
-// scene.add(cube)
 
 function main(model, texture) {
+    controls.enableZoom = false;
+    controls.zoomSpeed = 9999;
+    //отключение и последующее включение зума нужно,
+    //тк controls может считать действия до main() и приближать/отдалять камеру
+
     coord = window.pageYOffset;
     let moveButton = document.querySelector("#moveModels");
     let removeButton = document.querySelector("#removeButton");
@@ -110,13 +110,21 @@ function main(model, texture) {
         animate();
         animateNoUse = false;
         window.scrollTo(0, 0)
+        setTimeout(() => {
+            controls.enableZoom = true;
+            controls.zoomSpeed = 1;
+        }, 1000);
         return;
     }
     /* Данный иф нужен, чтобы объекты не начинали вращаться быстрее.
     Иначе бы каждый раз использовался animate() и в секунду был бы
-    поворот на0.005 * n радиан, где n - количество использования main()*/
+    поворот на 0.005 * n радиан, где n - количество использования main()*/
     render();
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+        controls.enableZoom = true;
+        controls.zoomSpeed = 1;
+    }, 1000);
 }
 function toggleControls() {
     button = document.querySelector("#moveModels");
@@ -130,20 +138,24 @@ function toggleControls() {
 }
 // удаляет объект и скрывает всякое
 function deleteScene() {
-    scene.remove(object);
-    texture = new THREE.Texture()
-    /*обнуление нынешней текстуры, чтобы при загрузке следующего объекта
-     не было кривой текстуры*/
-    //славно бы было сделать добавление объекта после всех действий, но лан
     let canvas = document.querySelector(".canvas-container");
     let moveButton = document.querySelector("#moveModels");
     let removeButton = document.querySelector("#removeButton");
     let addButton = document.querySelector(".addButons");
 
+    moveButton.textContent = "Авто вращение";
+    permissionControls = true;
+    controls.enabled = true;
+
+    scene.remove(object);
+
+    texture = new THREE.Texture()
+    /*обнуление нынешней текстуры, чтобы при загрузке следующего объекта
+     не было кривой текстуры*/
+    //славно бы было сделать добавление объекта после всех действий, но лан
     canvas.classList.toggle("show");
     moveButton.classList.toggle("show");
     removeButton.classList.toggle("show");
     addButton.classList.toggle("show");
-
     window.scrollTo(0, coord)
 }
