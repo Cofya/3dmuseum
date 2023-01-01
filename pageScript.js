@@ -1,6 +1,17 @@
 /* Файл для работы с самой страницей, не затрагивая 3d объекты
 крч изменение самой страницы там классы и тд*/
 
+function burgerToggle(num) {
+    let headline = document.querySelectorAll(".icons__headlines")[num];
+    let burger = headline.querySelector(".burger");
+    let div = headline.nextElementSibling;
+    burger.classList.toggle("burger-active");
+    div.classList.toggle("burger-target-active");
+    setTimeout(() => {
+        div.classList.toggle("show");
+    }, 150)
+}
+
 let width = window.innerWidth / 100 * 30;
 if (width > 270) {
     let imgList = document.querySelectorAll(".icons__mineral");
@@ -22,13 +33,8 @@ if (width > 270) {
     }
 }
 
-function burgerToggle(num) {
-    let headline = document.querySelectorAll(".icons__headlines")[num];
-    let burger = headline.querySelector(".burger");
-    let div = headline.nextElementSibling;
-    burger.classList.toggle("burger-active");
-    div.classList.toggle("burger-target-active");
-    setTimeout(() => {
-        div.classList.toggle("show");
-    }, 150)
+for (let grid of document.querySelectorAll(".grid")) {
+    if (grid.children.length % 2 == 1) {
+        grid.style
+    }
 }

@@ -6,235 +6,242 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icons/website_logo.png">
     <title>3D музей</title>
 </head>
 
 <body>
-    <div class="add-buttons">
-        <div class="icons">
-            <section>
-                <div class="icons__headlines">
-                    <h1 class="icons__title">Кварц и его разновидности</h1>
-                    <div class="burger burger-active" onclick="burgerToggle(0)">
-                        <span class="burger__line burger__line-first"></span>
-                        <span class="burger__line burger__line-second"></span>
-                        <span class="burger__line burger__line-third"></span>
-                        <span class="burger__line burger__line-fourth"></span>
-                    </div>
-                </div>
-                <div class="burger-target">
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">
-                            Агаты
-                        </h1>
-                        <div class="icons">
-                            <div class="imgWrapper">
-                                <img src="icons/icon_agat1.png" alt="агат" class="icons__mineral"
-                                    onclick="main('objs/agat1.obj', 'textures/agat1.jpg')">
-                            </div>
-                            <div class="imgWrapper">
-                                <img src="icons/icon_agat2.png" alt="агат" class="icons__mineral"
-                                    onclick="main('objs/agat2.obj', 'textures/agat2.jpg')">
-                            </div>
-                            <div class="imgWrapper">
-                                <img src="icons/icon_agat3.png" alt="агат" class="icons__mineral"
-                                    onclick="main('objs/agat3.obj', 'textures/agat3.jpg')">
-                            </div>
-                            <div class="imgWrapper">
-                                <img src="icons/icon_agat4.png" alt="агат" class="icons__mineral"
-                                    onclick="main('objs/agat4.obj', 'textures/agat4.jpg')">
-                            </div>
+    <header>
+        <img src="icons/logo.PNG" alt="иконка сайта" id="website-logo">
+    </header>
+    <div id="header-to-main"></div>
+    <main>
+        <div class="add-buttons">
+            <div class="icons">
+                <section>
+                    <div class="icons__headlines">
+                        <h1 class="icons__title">Кварц и его разновидности</h1>
+                        <div class="burger burger-active" onclick="burgerToggle(0)">
+                            <span class="burger__line burger__line-first"></span>
+                            <span class="burger__line burger__line-second"></span>
+                            <span class="burger__square"></span>
+                            <span class="burger__line burger__line-third"></span>
+                            <span class="burger__line burger__line-fourth"></span>
                         </div>
                     </div>
+                    <div class="burger-target">
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Агаты</h2>
+                            <div class="icons__row">
+                                <div class="imgWrapper">
+                                    <img src="icons/icon_agat1.png" alt="агат" class="icons__mineral"
+                                        onclick="main('objs/agat1.obj', 'textures/agat1.jpg')">
+                                </div>
+                                <div class="imgWrapper">
+                                    <img src="icons/icon_agat2.png" alt="агат" class="icons__mineral"
+                                        onclick="main('objs/agat2.obj', 'textures/agat2.jpg')">
+                                </div>
+                                <div class="imgWrapper">
+                                    <img src="icons/icon_agat3.png" alt="агат" class="icons__mineral"
+                                        onclick="main('objs/agat3.obj', 'textures/agat3.jpg')">
+                                </div>
+                                <div class="imgWrapper">
+                                    <img src="icons/icon_agat4.png" alt="агат" class="icons__mineral"
+                                        onclick="main('objs/agat4.obj', 'textures/agat4.jpg')">
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Горные хрустали</h1>
-                        <div class="icons">
-                            <div class="imgWrapper">
-                                <img src="icons/icon_crystal1.png" alt="хрусталь" class="icons__mineral"
-                                    onclick="main('objs/crystal1.obj', 'textures/crystal1.jpg')">
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Горные хрустали</h2>
+                            <div class="icons__row">
+                                <div class="imgWrapper">
+                                    <img src="icons/icon_crystal1.png" alt="хрусталь" class="icons__mineral"
+                                        onclick="main('objs/crystal1.obj', 'textures/crystal1.jpg')">
+                                </div>
+                                <div class="imgWrapper">
+                                    <img src="icons/icon_crystal2.png" alt="хрусталь" class="icons__mineral"
+                                        onclick="main('objs/crystal2.obj', 'textures/crystal2.jpg')">
+                                </div>
+                                <div class="imgWrapper" style="justify-content: center;">
+                                    <img src="icons/icon_crystal3.png" alt="хрусталь" class="icons__mineral"
+                                        onclick="main('objs/crystal3.obj', 'textures/crystal3.jpg')">
+                                </div>
                             </div>
-                            <div class="imgWrapper">
-                                <img src="icons/icon_crystal2.png" alt="хрусталь" class="icons__mineral"
-                                    onclick="main('objs/crystal2.obj', 'textures/crystal2.jpg')">
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Аметисты</h2>
+                            <div class="icons__row">
+                                <div class="imgWrapper">
+                                    <img src="icons/icon_amethyst1.png" alt="аметист" class="icons__mineral"
+                                        onclick="main('objs/amethyst1.obj', 'textures/amethyst1.jpg')">
+                                </div>
+                                <div class="imgWrapper">
+                                    <img src="icons/icon_amethyst2.png" alt="аметист" class="icons__mineral"
+                                        onclick="main('objs/amethyst2.obj', 'textures/amethyst2.jpg')">
+                                </div>
                             </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Кварц</h2>
                             <div class="imgWrapper">
-                                <img src="icons/icon_crystal3.png" alt="хрусталь" class="icons__mineral"
-                                    onclick="main('objs/crystal3.obj', 'textures/crystal3.jpg')">
+                                <img src="icons/icons_quartz1.png" alt="кварц" class="icons__mineral"
+                                    onclick="main('objs/quartz1.obj','textures/quartz1.jpg')">
+                            </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Сердолики</h2>
+                            <div class="icons__row">
+                                <div class="imgWrapper">
+                                    <img src=" icons/icon_cornelian1.png" alt="сердолик" class="icons__mineral"
+                                        onclick="main('objs/cornelian1.obj', 'textures/cornelian1.jpg')">
+                                </div>
+                                <div class="imgWrapper">
+                                    <img src=" icons/icon_cornelian2.png" alt="сердолик" class="icons__mineral"
+                                        onclick="main('objs/cornelian2.obj', 'textures/cornelian2.jpg')">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Аметисты</h1>
-                        <div class="icons">
+                </section>
+            </div>
+
+            <div class="icons">
+                <section>
+                    <div class="icons__headlines">
+                        <h1 class="icons__title">Прочее</h1>
+                        <div class="burger burger-active" onclick="burgerToggle(1)">
+                            <span class="burger__line burger__line-first"></span>
+                            <span class="burger__line burger__line-second"></span>
+                            <span class="burger__square"></span>
+                            <span class="burger__line burger__line-third"></span>
+                            <span class="burger__line burger__line-fourth"></span>
+                        </div>
+                    </div>
+                    <div class="burger-target">
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Авачит</h2>
                             <div class="imgWrapper">
-                                <img src="icons/icon_amethyst1.png" alt="аметист" class="icons__mineral"
-                                    onclick="main('objs/amethyst1.obj', 'textures/amethyst1.jpg')">
+                                <img src="icons/icon_avachit1.png" alt="авачит" class="icons__mineral"
+                                    onclick="main('objs/avachit1.obj', 'textures/avachit1.jpg')">
                             </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Амазонит</h2>
                             <div class="imgWrapper">
-                                <img src="icons/icon_amethyst2.png" alt="аметист" class="icons__mineral"
-                                    onclick="main('objs/amethyst2.obj', 'textures/amethyst2.jpg')">
+                                <img src="icons/icon_amazonite1.png" alt="авачит" class="icons__mineral"
+                                    onclick="main('objs/amazonite1.obj', 'textures/amazonite1.jpg')">
+                            </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Гарниерит</h2>
+                            <div class="imgWrapper">
+                                <img src="icons/icon_garnierite1.png" alt="авачит" class="icons__mineral"
+                                    onclick="main('objs/garnierite1.obj', 'textures/garnierite1.jpg')">
+                            </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Граниты</h2>
+                            <div class="icons__row">
+                                <div class="imgWrapper">
+                                    <img src="icons/icon_granite1.png" alt="гранит" class="icons__mineral"
+                                        onclick="main('objs/granite1.obj','textures/granite1.jpg')">
+                                </div>
+                                <div class="imgWrapper">
+                                    <img src="icons/icons_granite2.png" alt="гранит" class="icons__mineral"
+                                        onclick="main('objs/granite2.obj','textures/granite2.jpg')">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Роза пустыни</h2>
+                            <div class="imgWrapper">
+                                <img src="icons/icon_desertRose1.png" alt="роза пустыни" class="icons__mineral"
+                                    onclick="main('objs/desertRose1.obj','textures/desertRose1.jpg')">
+                            </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Обсидиан</h2>
+                            <div class="imgWrapper">
+                                <img src="icons/icon_obsidian1.png" alt="обсидиан" class="icons__mineral"
+                                    onclick="main('objs/obsidian1.obj', 'textures/obsidian1.jpg')">
+                            </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Лавовые камни</h2>
+                            <div class="icons__row">
+                                <div class="imgWrapper">
+                                    <img src="icons/icon_lavaStone1.png" alt="лавовый камень" class="icons__mineral"
+                                        onclick="main('objs/lavaStone1.obj','textures/lavaStone1.jpg')">
+                                </div>
+                                <div class="imgWrapper">
+                                    <img src="icons/icon_lavaStone2.png" alt="лавовый камень" class="icons__mineral"
+                                        onclick="main('objs/lavaStone2.obj','textures/lavaStone2.jpg')">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Кальцит</h2>
+                            <div class="imgWrapper">
+                                <img src="icons/icon_calcite1.png" alt="кальцит" class="icons__mineral"
+                                    onclick="main('objs/calcite1.obj','textures/calcite1.jpg')">
+                            </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Пирит</h2>
+                            <div class="imgWrapper">
+                                <img src="icons/icon_pyrite1.png" alt="пирит" class="icons__mineral"
+                                    onclick="main('objs/pyrite1.obj','textures/pyrite1.jpg')">
+                            </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Змеевик</h2>
+                            <div class="imgWrapper">
+                                <img src="icons/icon_serpentine1.png" alt="змеевик" class="icons__mineral"
+                                    onclick="main('objs/serpentine1.obj', 'textures/serpentine1.jpg')">
+                            </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Опал</h2>
+                            <div class="imgWrapper">
+                                <img src="icons/icon_opal1.png" alt="опал" class="icons__mineral"
+                                    onclick="main('objs/opal1.obj','textures/opal1.jpg')">
+                            </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Магнезит</h2>
+                            <div class="imgWrapper">
+                                <img src="icons/icon_magnesite1.png" alt="магнезит" class="icons__mineral"
+                                    onclick="main('objs/magnesite1.obj','textures/magnesite1.jpg')">
+                            </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Родонит</h2>
+                            <div class="imgWrapper">
+                                <img src="icons/icon_rhodonite1.png" alt="магнезит" class="icons__mineral"
+                                    onclick="main('objs/rhodonite1.obj','textures/rhodonite1.jpg')">
+                            </div>
+                        </div>
+                        <div class="icons__width-limit">
+                            <h2 class="icons__title">Тальк благородный</h2>
+                            <div class="imgWrapper" style="justify-content: center;">
+                                <img src="icons/icon_talc1.png" alt="тальк" class="icons__mineral"
+                                    onclick="main('objs/talc1.obj','textures/talc1.jpg')">
                             </div>
                         </div>
                     </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Кварц</h1>
-                        <div class="imgWrapper">
-                            <img src="icons/icons_quartz1.png" alt="кварц" class="icons__mineral"
-                                onclick="main('objs/quartz1.obj','textures/quartz1.jpg')">
-                        </div>
-                    </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Сердолики</h1>
-                        <div class="icons">
-                            <div class="imgWrapper">
-                                <img src=" icons/icon_cornelian1.png" alt="сердолик" class="icons__mineral"
-                                    onclick="main('objs/cornelian1.obj', 'textures/cornelian1.jpg')">
-                            </div>
-                            <div class="imgWrapper">
-                                <img src=" icons/icon_cornelian2.png" alt="сердолик" class="icons__mineral"
-                                    onclick="main('objs/cornelian2.obj', 'textures/cornelian2.jpg')">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
+        <button onclick="deleteScene()" class="show" id="remove-button" style="font-size: large;">
+            Вернуться
+        </button>
 
-        <div class="icons">
-            <section>
-                <div class="icons__headlines">
-                    <h1 class="icons__title">Прочее</h1>
-                    <div class="burger burger-active" onclick="burgerToggle(1)">
-                        <span class="burger__line burger__line-first"></span>
-                        <span class="burger__line burger__line-second"></span>
-                        <span class="burger__line burger__line-third"></span>
-                        <span class="burger__line burger__line-fourth"></span>
-                    </div>
-                </div>
-                <div class="burger-target">
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Авачит</h1>
-                        <div class="imgWrapper">
-                            <img src="icons/icon_avachit1.png" alt="авачит" class="icons__mineral"
-                                onclick="main('objs/avachit1.obj', 'textures/avachit1.jpg')">
-                        </div>
-                    </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Амазонит</h1>
-                        <div class="imgWrapper">
-                            <img src="icons/icon_amazonite1.png" alt="авачит" class="icons__mineral"
-                                onclick="main('objs/amazonite1.obj', 'textures/amazonite1.jpg')">
-                        </div>
-                    </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Гарниерит</h1>
-                        <div class="imgWrapper">
-                            <img src="icons/icon_garnierite1.png" alt="авачит" class="icons__mineral"
-                                onclick="main('objs/garnierite1.obj', 'textures/garnierite1.jpg')">
-                        </div>
-                    </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Граниты</h1>
-                        <div class="icons">
-                            <div class="imgWrapper">
-                                <img src="icons/icon_granite1.png" alt="гранит" class="icons__mineral"
-                                    onclick="main('objs/granite1.obj','textures/granite1.jpg')">
-                            </div>
-                            <div class="imgWrapper">
-                                <img src="icons/icons_granite2.png" alt="гранит" class="icons__mineral"
-                                    onclick="main('objs/granite2.obj','textures/granite2.jpg')">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Роза пустыни</h1>
-                        <div class="imgWrapper">
-                            <img src="icons/icon_desertRose1.png" alt="роза пустыни" class="icons__mineral"
-                                onclick="main('objs/desertRose1.obj','textures/desertRose1.jpg')">
-                        </div>
-                    </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Обсидиан</h1>
-                        <div class="imgWrapper">
-                            <img src="icons/icon_obsidian1.png" alt="обсидиан" class="icons__mineral"
-                                onclick="main('objs/obsidian1.obj', 'textures/obsidian1.jpg')">
-                        </div>
-                    </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Лавовые камни</h1>
-                        <div class="icons">
-                            <div class="imgWrapper">
-                                <img src="icons/icon_lavaStone1.png" alt="лавовый камень" class="icons__mineral"
-                                    onclick="main('objs/lavaStone1.obj','textures/lavaStone1.jpg')">
-                            </div>
-                            <div class="imgWrapper">
-                                <img src="icons/icon_lavaStone2.png" alt="лавовый камень" class="icons__mineral"
-                                    onclick="main('objs/lavaStone2.obj','textures/lavaStone2.jpg')">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Кальцит</h1>
-                        <div class="imgWrapper">
-                            <img src="icons/icon_calcite1.png" alt="кальцит" class="icons__mineral"
-                                onclick="main('objs/calcite1.obj','textures/calcite1.jpg')">
-                        </div>
-                    </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Пирит</h1>
-                        <div class="imgWrapper">
-                            <img src="icons/icon_pyrite1.png" alt="пирит" class="icons__mineral"
-                                onclick="main('objs/pyrite1.obj','textures/pyrite1.jpg')">
-                        </div>
-                    </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Змеевик</h1>
-                        <div class="imgWrapper">
-                            <img src="icons/icon_serpentine1.png" alt="змеевик" class="icons__mineral"
-                                onclick="main('objs/serpentine1.obj', 'textures/serpentine1.jpg')">
-                        </div>
-                    </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Опал</h1>
-                        <div class="imgWrapper">
-                            <img src="icons/icon_opal1.png" alt="опал" class="icons__mineral"
-                                onclick="main('objs/opal1.obj','textures/opal1.jpg')">
-                        </div>
-                    </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Магнезит</h1>
-                        <div class="imgWrapper">
-                            <img src="icons/icon_magnesite1.png" alt="магнезит" class="icons__mineral"
-                                onclick="main('objs/magnesite1.obj','textures/magnesite1.jpg')">
-                        </div>
-                    </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Родонит</h1>
-                        <div class="imgWrapper">
-                            <img src="icons/icon_rhodonite1.png" alt="магнезит" class="icons__mineral"
-                                onclick="main('objs/rhodonite1.obj','textures/rhodonite1.jpg')">
-                        </div>
-                    </div>
-                    <div class="icons__width-limit">
-                        <h1 class="icons__title">Тальк благородный</h1>
-                        <div class="imgWrapper">
-                            <img src="icons/icon_talc1.png" alt="тальк" class="icons__mineral"
-                                onclick="main('objs/talc1.obj','textures/talc1.jpg')">
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-    <button onclick="deleteScene()" class="show" id="remove-button" style="font-size: large;">
-        Вернуться
-    </button>
-
-    <button id="move-button" class="show" onclick="toggleControls()" style="font-size: large;">
-        Авто вращение
-    </button>
-    <div class='canvas-container show'></div>
+        <button id="move-button" class="show" onclick="toggleControls()" style="font-size: large;">
+            Авто вращение
+        </button>
+        <div class='canvas-container show'></div>
+    </main>
 
     <script src="pageScript.js"></script>
 

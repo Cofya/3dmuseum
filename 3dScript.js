@@ -7,7 +7,7 @@ let object;
 let permissionControls = true;
 let animateNoUse = true;
 let scene = new THREE.Scene();
-scene.background = new THREE.Color(0xffffff);
+scene.background = new THREE.Color(0xfbf4ea);
 
 let ambient = new THREE.AmbientLight(0xffffff);
 scene.add(ambient);
