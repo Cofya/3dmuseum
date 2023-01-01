@@ -136,7 +136,7 @@ main {
 }
 
 @media (max-width: 1020px) {
-    .icons___row .imgWrapper {
+    .icons__row .imgWrapper {
         min-width: 120px;
         width: 40%;
     }
