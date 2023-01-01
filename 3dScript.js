@@ -63,21 +63,8 @@ function loadModel(href) {
     return object;
 }
 
-function animate() {
-    requestAnimationFrame(animate);
-    if (!permissionControls) {
-        object.rotation.y -= 0.005;
-    }
-    render();
-    controls.update();
-}
-
-function render() {
-    renderer.render(scene, camera);
-}
-
 // получение текстуры
-async function loadTexture(href) {
+function loadTexture(href) {
     image_loader.load(href, (image) => { // 'objs/textured_output.jpg'
         texture.image = image;
         texture.needsUpdate = true;
@@ -92,9 +79,9 @@ function main(model, texture) {
     //тк controls может считать действия до main() и приближать/отдалять камеру
 
     coord = window.pageYOffset;
-    let moveButton = document.querySelector("#moveModels");
-    let removeButton = document.querySelector("#removeButton");
-    let addButton = document.querySelector(".addButons");
+    let moveButton = document.querySelector("#move-button");
+    let removeButton = document.querySelector("#remove-button");
+    let addButton = document.querySelector(".add-buttons");
     moveButton.classList.toggle("show");
     removeButton.classList.toggle("show");
     addButton.classList.toggle("show");
@@ -127,7 +114,7 @@ function main(model, texture) {
     }, 1000);
 }
 function toggleControls() {
-    button = document.querySelector("#moveModels");
+    button = document.querySelector("#move-button");
     controls.enabled = !permissionControls;
     permissionControls = !permissionControls;
     if (permissionControls) {
@@ -139,17 +126,16 @@ function toggleControls() {
 // удаляет объект и скрывает всякое
 function deleteScene() {
     let canvas = document.querySelector(".canvas-container");
-    let moveButton = document.querySelector("#moveModels");
-    let removeButton = document.querySelector("#removeButton");
-    let addButton = document.querySelector(".addButons");
+    let moveButton = document.querySelector("#move-button");
+    let removeButton = document.querySelector("#remove-button");
+    let addButton = document.querySelector(".add-buttons");
 
     moveButton.textContent = "Авто вращение";
     permissionControls = true;
     controls.enabled = true;
-
     scene.remove(object);
 
-    texture = new THREE.Texture()
+    texture = new THREE.Texture();
     /*обнуление нынешней текстуры, чтобы при загрузке следующего объекта
      не было кривой текстуры*/
     //славно бы было сделать добавление объекта после всех действий, но лан
@@ -157,5 +143,21 @@ function deleteScene() {
     moveButton.classList.toggle("show");
     removeButton.classList.toggle("show");
     addButton.classList.toggle("show");
-    window.scrollTo(0, coord)
+    window.scrollTo(0, coord);
+}
+
+function animate() {
+    requestAnimationFrame(animate);
+    if (!permissionControls) {
+        object.rotation.y -= 0.005;
+    }
+    render();
+    if (scene.children.length > 2) {
+        scene.remove(scene.children[1]);
+    }
+    controls.update();
+}
+
+function render() {
+    renderer.render(scene, camera);
 }
