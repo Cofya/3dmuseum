@@ -37,7 +37,7 @@
                 <section>
                     <div class="icons__headlines">
                         <h1 class="icons__title">Кварц и его разновидности</h1>
-                        <div class="burger burger-active" onclick="burgerToggle(0)">
+                        <div class="burger burger-active" onclick="burgerToggle(this)">
                             <span class="burger__line burger__line-first"></span>
                             <span class="burger__line burger__line-second"></span>
                             <span class="burger__square"></span>
@@ -126,7 +126,7 @@
                 <section>
                     <div class="icons__headlines">
                         <h1 class="icons__title">Прочее</h1>
-                        <div class="burger burger-active" onclick="burgerToggle(1)">
+                        <div class="burger burger-active" onclick="burgerToggle(this)">
                             <span class="burger__line burger__line-first"></span>
                             <span class="burger__line burger__line-second"></span>
                             <span class="burger__square"></span>
@@ -269,14 +269,34 @@
                 </section>
             </div>
         </div>
-        <button onclick="deleteScene()" class="show" id="remove-button" style="font-size: large;">
-            Вернуться
-        </button>
 
-        <button id="move-button" class="show" onclick="toggleControls()" style="font-size: large;">
-            Авто вращение
-        </button>
-        <div class='canvas-container show'></div>
+        <div class="menu-3d show">
+            <button onclick="deleteScene()" id="remove-button" style="font-size: large;">
+                Вернуться
+            </button>
+            <button id="move-button" onclick="toggleControls()" style="font-size: large;">
+                Авто вращение
+            </button>
+            <div class="mineral-info">
+                <span style="display:block"></span>
+                <div style="display: flex; align-items: center;">
+                    <span>Подробнее</span>
+                    <div class="burger" onclick="burgerToggle(this)" style="display: flex; align-items: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                            class="open-info">
+                            <path
+                                d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="burger-target show">
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+            <div class='canvas-container'></div>
+        </div>
     </main>
 
     <script src="pageScript.js"></script>
