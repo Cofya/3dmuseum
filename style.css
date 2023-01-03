@@ -5,10 +5,10 @@
     cursor: default;
 }
 
-html {
-    width: 100%;
+body {
     background-color: #f4ecd7;
     color: #4D2703;
+    transition: 0.5s all linear;
 }
 
 button {
@@ -17,25 +17,61 @@ button {
 }
 
 header {
+    display: flex;
     width: 100%;
     height: 70px;
     background-color: #4D2703;
+    box-shadow: 0px 3px 10px 4px #4A2400;
 }
 
 #website-logo {
     width: 90px;
     padding-top: 4.9px;
     padding-left: 5px;
+    background: none;
 }
 
-#header-to-main {
+.switch-theme {
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: 6px;
-    background: linear-gradient(0deg, rgb(244, 236, 215), rgb(77, 39, 3));
+    justify-content: end;
+    padding-right: 3%;
+    color: #f4ecd7;
+}
+
+.switch-theme__button {
+    height: 38px;
+    width: 129px;
+    cursor: pointer;
+    padding: 3px;
+    padding-right: 5px;
+    background-color: #5F4023;
+    border: 1px solid #5F4023;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px #583C1F;
+}
+
+.switch-theme__button svg {
+    position: absolute;
+    cursor: pointer;
+    padding-top: 7px;
+    padding-right: 5px;
+    transition: 0.5s all linear;
+}
+
+.switch-theme__button path {
+    cursor: pointer;
+}
+
+.switch-theme__button span {
+    display: block;
+    cursor: pointer;
+    padding-left: 30px;
 }
 
 main {
-    padding-top: 13px;
+    padding-top: 12px;
 }
 
 .burger {
@@ -68,9 +104,9 @@ main {
     display: block;
     position: absolute;
     cursor: pointer;
-    left: 0.5px;
-    height: 6px;
-    width: 100%;
+    left: 2px;
+    height: 5px;
+    width: 90%;
     top: 50%;
     transform: translateY(-50%);
     background-color: #ffffff;
@@ -102,7 +138,8 @@ main {
     transform: translateY(-50%) rotate(45deg);
 }
 
-.burger-active .burger__line-third {
+.burger-active .burger__line-third,
+.burger-active .burger__square-1 {
     transform: translateY(-50%) rotate(-45deg);
 }
 
@@ -126,7 +163,6 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    transition: all 0.5s linear;
 }
 
 .imgWrapper {
@@ -165,13 +201,35 @@ main {
     width: fit-content;
 }
 
+.dark {
+    background-color: #525252;
+    color: #BDBDBD;
+}
+
+.dark header {
+    background-color: #2D2D2F;
+    box-shadow: 0px 3px 10px 4px #2a2a2c;
+}
+
+.dark .switch-theme__button {
+    background-color: #494846;
+    border: 1px solid #494846;
+    box-shadow: 1px 1px 2px 1px #3b3b3b;
+    color: #faf8f9;
+}
+
+.dark .burger__line {
+    border: 1px solid #2D2D2F;
+}
+
+.dark #website-logo {
+    filter: grayscale(100%);
+}
+
 .show {
     display: none;
 }
 
-/* .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    justify-content: center;
-} */
+.opacity {
+    opacity: 0;
+}

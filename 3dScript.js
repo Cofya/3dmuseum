@@ -72,7 +72,9 @@ function loadTexture(href) {
 }
 
 
-function main(model, texture) {
+function main(name) {
+    let model = `objs/${name}.obj`
+    let texture = `textures/${name}.jpg`
     controls.enableZoom = false;
     controls.zoomSpeed = 9999;
     //отключение и последующее включение зума нужно,

@@ -1,6 +1,23 @@
 /* Файл для работы с самой страницей, не затрагивая 3d объекты
 крч изменение самой страницы там классы и тд*/
+function darkTheme() {
+    let block = document.querySelector(".switch-theme__button");
+    let span = block.querySelector("span");
+    let svgs = block.querySelectorAll("svg");
+    let body = document.querySelector("body");
 
+    svgs[0].classList.toggle("opacity")
+    svgs[1].classList.toggle("opacity")
+    body.classList.toggle("dark");
+
+    if (body.classList.contains('dark')) {
+        span.innerHTML = "Включить светлую тему"
+        localStorage.setItem("theme", true)
+        return;
+    }
+    span.innerHTML = "Включить тёмную тему"
+    localStorage.setItem("theme", false)
+}
 function burgerToggle(num) {
     let headline = document.querySelectorAll(".icons__headlines")[num];
     let burger = headline.querySelector(".burger");
@@ -33,8 +50,29 @@ if (width > 270) {
     }
 }
 
-for (let grid of document.querySelectorAll(".grid")) {
-    if (grid.children.length % 2 == 1) {
-        grid.style
-    }
+let activeTheme = localStorage.getItem('theme');
+if (activeTheme == "true") {
+    let body = document.querySelector('body');
+    let svgs = document.querySelector(".switch-theme__button").querySelectorAll('svg');
+    body.style.transition = "0s all linear";
+    svgs.forEach((elem) => {
+        elem.style.transition = "0s all linear";
+    });
+    darkTheme();
+    setTimeout(() => body.style.transition = "0.3s all linear", 300);
+    setTimeout(() => svgs.forEach((elem) => {
+        elem.style.transition = "0.5s all linear";
+    }), 200)
+} else {
+    body = document.querySelector('body');
+    body.classList.remove('dark')
+}
+
+isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+if (isSafari) {
+    burgerSquares = document.querySelectorAll('.burger__square');
+    burgerSquares.forEach((elem) => {
+        elem.style.height = "6px";
+        elem.style.left = "3px"
+    })
 }
