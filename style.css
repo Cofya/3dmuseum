@@ -1,11 +1,14 @@
 * {
     padding: 0px;
     margin: 0px;
-    cursor: default;
 }
 
+h1,
+h2,
+h3,
+span,
 ul {
-    padding-left: 20px;
+    cursor: default;
 }
 
 body {
@@ -25,6 +28,7 @@ header {
     height: 70px;
     background-color: #4D2703;
     box-shadow: 0px 3px 10px 4px #4A2400;
+    margin-bottom: 12px;
 }
 
 #website-logo {
@@ -34,7 +38,7 @@ header {
     background: none;
 }
 
-.switch-theme {
+.header-button {
     display: flex;
     align-items: center;
     width: 100%;
@@ -43,9 +47,15 @@ header {
     color: #f4ecd7;
 }
 
-.switch-theme__button {
-    height: 38px;
-    width: 129px;
+.header-button__glossary {
+    margin-right: 30px;
+}
+
+.header-button__glossary,
+.header-button__switch-theme {
+    display: flex;
+    align-items: center;
+    height: 40px;
     cursor: pointer;
     padding: 3px;
     padding-right: 5px;
@@ -55,26 +65,50 @@ header {
     box-shadow: 1px 1px 2px 1px #583C1F;
 }
 
-.switch-theme__button svg {
+.header-button__glossary {
+    width: 110px;
+}
+
+.header-button__switch-theme {
+    width: 130px;
+}
+
+.header-button svg {
     position: absolute;
     cursor: pointer;
-    padding-top: 7px;
     padding-right: 5px;
     transition: 0.5s all linear;
 }
 
-.switch-theme__button path {
-    cursor: pointer;
-}
-
-.switch-theme__button span {
+.header-button__glossary span,
+.header-button__switch-theme span {
     display: block;
     cursor: pointer;
     padding-left: 30px;
 }
 
-main {
-    padding-top: 12px;
+.glossary span {
+    display: block;
+    padding: 8px;
+}
+
+.glossary span::first-letter {
+    padding-left: 20px;
+}
+
+.glossary li span::first-letter {
+    padding-left: 0px;
+}
+
+.glossary ul {
+    padding-left: 30px;
+}
+
+.glossary img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #fff;
+    border-radius: 5px;
 }
 
 .burger {
@@ -82,6 +116,10 @@ main {
     height: 32px;
     cursor: pointer;
     position: relative;
+}
+
+.burger span {
+    cursor: pointer;
 }
 
 .icons .burger {
@@ -146,9 +184,7 @@ main {
     transform: translateY(-50%) rotate(-45deg);
 }
 
-.open-info,
-.open-info svg,
-.open-info path {
+.open-info {
     cursor: pointer;
     transition: 0.3s all linear;
 }
@@ -181,7 +217,7 @@ main {
 
 .imgWrapper {
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
 }
 
@@ -192,7 +228,11 @@ main {
     }
 }
 
-.imgWrapper:nth-child(2n) {
+.icons__row .imgWrapper:nth-child(n) {
+    justify-content: end;
+}
+
+.icons__row .imgWrapper:nth-child(2n) {
     justify-content: start;
 }
 
@@ -217,7 +257,11 @@ main {
 
 .mineral-info {
     padding: 20px;
-    max-width: 520px;
+    max-width: 550px;
+}
+
+.mineral-info ul {
+    padding-left: 30px;
 }
 
 .mineral-info svg {
@@ -234,7 +278,8 @@ main {
     box-shadow: 0px 3px 10px 4px #2a2a2c;
 }
 
-.dark .switch-theme__button {
+.dark .header-button__switch-theme,
+.dark .header-button__glossary {
     background-color: #494846;
     border: 1px solid #494846;
     box-shadow: 1px 1px 2px 1px #3b3b3b;

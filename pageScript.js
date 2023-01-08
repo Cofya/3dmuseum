@@ -2,7 +2,7 @@
 крч изменение самой страницы там классы и тд*/
 
 function darkTheme() {
-    let block = document.querySelector(".switch-theme__button");
+    let block = document.querySelector(".header-button__switch-theme");
     let span = block.querySelector("span");
     let svgs = block.querySelectorAll("svg");
     let body = document.querySelector("body");
@@ -20,6 +20,22 @@ function darkTheme() {
     localStorage.setItem("theme", false)
 }
 
+function openBook() {
+    let block = document.querySelector(".header-button__glossary");
+    let span = block.querySelector("span");
+    let svg = block.querySelectorAll("svg")[1];
+    let main = document.querySelector("main");
+    let glossary = document.querySelector(".glossary");
+
+    glossary.classList.toggle("show")
+    main.classList.toggle("show");
+    svg.classList.toggle("opacity");
+    if (svg.classList.contains("opacity")) {
+        span.innerHTML = "Термины";
+        return;
+    }
+    span.innerHTML = "Вернуться <br> в меню";
+}
 function burgerToggle(burger) {
     burgerTarget = burger.parentElement.nextElementSibling
     burger.classList.toggle("burger-active");
@@ -32,12 +48,12 @@ function burgerToggle(burger) {
 // ставится ширина и высота картинкам в зависимости от ширины экрана
 //вообще это невероятно легко делается css зачем я это сделал
 // если этот коммент кто-то увидит я честно это сделаю в css
-let width = window.innerWidth / 100 * 30;
+let width = window.innerWidth / 100 * 25;
 if (width > 270) {
     let imgList = document.querySelectorAll(".icons__mineral");
     for (let img of imgList) {
-        img.style.width = "230px"
-        img.style.height = "230px"
+        img.style.width = "210px"
+        img.style.height = "210px"
     }
 } else if (width < 120) {
     let imgList = document.querySelectorAll(".icons__mineral");
@@ -57,7 +73,7 @@ if (width > 270) {
 let activeTheme = localStorage.getItem('theme');
 if (activeTheme == "true") { // прикиньте в локал стородж булевое тру записалось строкоц
     let body = document.querySelector('body');
-    let svgs = document.querySelector(".switch-theme__button").querySelectorAll('svg');
+    let svgs = document.querySelector(".header-button__switch-theme").querySelectorAll('svg');
     body.style.transition = "0s all linear";
     svgs.forEach((elem) => {
         elem.style.transition = "0s all linear";
