@@ -298,12 +298,12 @@ function main(name) {
     camera.position.set(0, -9, 5);
 
     controls = new THREE.TrackballControls(camera, renderer.domElement);
-    controls.zoomSpeed = 2;
+    controls.zoomSpeed = window.innerWidth / 600;
     controls.noZoom = true;
     controls.minDistance = 3;
     controls.maxDistance = 20;
     controls.noPan = true;
-    controls.rotateSpeed = 2.5;
+    controls.rotateSpeed = window.innerWidth / 500;
 
     loadTexture(texture);
     loadModel(model);
