@@ -215,6 +215,7 @@ let description = {
     )
 }
 let coord;
+let controls;
 let object;
 let permissionControls = true;
 let animateNoUse = true;
@@ -231,13 +232,6 @@ camera.position.z = 5;
 let renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-
-let controls = new THREE.OrbitControls(camera, renderer.domElement);
-controls.enablePan = false;
-controls.minDistance = 3;
-controls.maxDistance = 20;
-// controls.minPolarAngle = Math.PI * 1 / 4;
-// controls.maxPolarAngle = Math.PI * 3 / 4;
 
 let loading_manager = new THREE.LoadingManager();
 let image_loader = new THREE.ImageLoader(loading_manager);
@@ -287,8 +281,8 @@ function loadTexture(href) {
 function main(name) {
     let model = `objs/${name}.obj`
     let texture = `textures/${name}.jpg`
-    controls.enableZoom = false;
-    controls.zoomSpeed = 9999;
+    // controls.noZoom = true;
+    // controls.zoomSpeed = 9999;
     //отключение и последующее включение зума нужно,
     //тк controls может считать действия до main() и приближать/отдалять камеру
 
@@ -302,6 +296,15 @@ function main(name) {
     canvas = document.getElementsByTagName('canvas')[0];
     camera.aspect = canvas.clientWidth / canvas.clientHeight;
     camera.position.set(0, -9, 5);
+
+    controls = new THREE.TrackballControls(camera, renderer.domElement);
+    controls.zoomSpeed = 2;
+    controls.noZoom = true;
+    controls.minDistance = 3;
+    controls.maxDistance = 20;
+    controls.noPan = true;
+    controls.rotateSpeed = 2.5;
+
     loadTexture(texture);
     loadModel(model);
     addDescription(name);
@@ -310,8 +313,7 @@ function main(name) {
         animateNoUse = false;
         window.scrollTo(0, 0)
         setTimeout(() => {
-            controls.enableZoom = true;
-            controls.zoomSpeed = 1;
+            controls.noZoom = false;
         }, 1000);
         return;
     }
@@ -321,8 +323,7 @@ function main(name) {
     render();
     window.scrollTo(0, 0);
     setTimeout(() => {
-        controls.enableZoom = true;
-        controls.zoomSpeed = 1;
+        controls.noZoom = false;
     }, 1000);
 }
 
@@ -404,7 +405,7 @@ function makeDescription(info, ...items) {
     list[0] = `<span style = "padding-left:20px">${list[0]}</span>`
     info = list.join(' ')
     li = []
-    items.forEach(elem => {
+    items.map(elem => {
         elem = `<li>${elem}</li>`;
         li.push(elem);
     });
