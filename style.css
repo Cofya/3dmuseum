@@ -22,6 +22,7 @@ button {
     margin: 5px;
 }
 
+/* Хедер и кнопки в нём */
 header {
     display: flex;
     width: 100%;
@@ -87,6 +88,7 @@ header {
     padding-left: 30px;
 }
 
+/* Глосарий */
 .glossary span {
     display: block;
     padding: 8px;
@@ -111,6 +113,7 @@ header {
     border-radius: 5px;
 }
 
+/* Бургер меню */
 .burger {
     width: 32px;
     height: 32px;
@@ -193,6 +196,7 @@ header {
     transform: rotate(90deg);
 }
 
+/* Основное меню */
 .icons,
 .icons__headlines,
 .icons__row {
@@ -268,6 +272,7 @@ header {
     fill: #4D2703
 }
 
+/* Тёмная версия */
 .dark {
     background-color: #525252;
     color: #BDBDBD;

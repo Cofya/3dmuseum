@@ -266,7 +266,6 @@ function loadModel(href) {
         camera.lookAt(object.position.x, object.position.y, object.position.z);
         renderer.render(scene, camera);
     });
-    return object;
 }
 
 // получение текстуры
@@ -296,6 +295,7 @@ function main(name) {
     canvas = document.getElementsByTagName('canvas')[0];
     camera.aspect = canvas.clientWidth / canvas.clientHeight;
     camera.position.set(0, -9, 5);
+    camera.up.set(0, 1, 0);
 
     controls = new THREE.TrackballControls(camera, renderer.domElement);
     controls.zoomSpeed = window.innerWidth / 600;
@@ -338,12 +338,13 @@ function addDescription(hrefName) {
     span.innerHTML = ''
     ul.innerHTML = ''
 
-    if (description[name]) {
+    if (description?.[name]) {
         span.innerHTML = description[name]['info'];
         ul.innerHTML = description[name]['items'];
     } else {
         span.innerHTML = "В разработке...";
         ul.innerHTML = "Это тоже в разработке..."
+        return;
     }
 
     if (description[name]['items'] === "") {
