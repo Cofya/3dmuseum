@@ -20,6 +20,7 @@ body {
 button {
     padding: 2px;
     margin: 5px;
+    text-align: center;
 }
 
 /* Хедер и кнопки в нём */
@@ -245,6 +246,12 @@ header {
 }
 
 .icons__mineral {
+    max-width: 210px;
+    width: min(35vh, 25vw);
+    min-width: 120px;
+    max-height: 210px;
+    height: min(35vh, 25vw);
+    min-height: 120px;
     border: 1px solid #ffffff;
     border-radius: 5%;
     cursor: pointer;

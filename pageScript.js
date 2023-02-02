@@ -34,7 +34,7 @@ function openBook() {
         span.innerHTML = "Термины";
         return;
     }
-    span.innerHTML = "Вернуться <br> в меню";
+    span.innerHTML = "Вернуться в меню";
 }
 function burgerToggle(burger) {
     burgerTarget = burger.parentElement.nextElementSibling
@@ -43,30 +43,6 @@ function burgerToggle(burger) {
     setTimeout(() => {
         burgerTarget.classList.toggle("show");
     }, 150)
-}
-
-// ставится ширина и высота картинкам в зависимости от ширины экрана
-//вообще это невероятно легко делается css зачем я это сделал
-// если этот коммент кто-то увидит я честно это сделаю в css
-let width = window.innerWidth / 100 * 25;
-if (width > 270) {
-    let imgList = document.querySelectorAll(".icons__mineral");
-    for (let img of imgList) {
-        img.style.width = "210px"
-        img.style.height = "210px"
-    }
-} else if (width < 120) {
-    let imgList = document.querySelectorAll(".icons__mineral");
-    for (let img of imgList) {
-        img.style.width = "120px"
-        img.style.height = "120px"
-    }
-} else {
-    let imgList = document.querySelectorAll(".icons__mineral");
-    for (let img of imgList) {
-        img.style.width = width + "px"
-        img.style.height = width + "px"
-    }
 }
 
 // чтобы тема не сбрасывалась
