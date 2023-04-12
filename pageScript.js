@@ -45,6 +45,23 @@ function burgerToggle(burger) {
     }, 150)
 }
 
+function openImg(elem) {
+    let menuImg = document.querySelector(".menu-img");
+    let bg = document.querySelector(".dark-bg");
+
+    if (menuImg.classList.contains("show")) {
+        let href = elem.src;
+        let img = menuImg.querySelector("img");
+        img.src = href;
+        menuImg.classList.remove("show");
+        bg.classList.remove("show");
+        window.scrollTo(0, 0)
+        return;
+    }
+
+    menuImg.classList.add("show");
+    bg.classList.add("show");
+}
 // чтобы тема не сбрасывалась
 let activeTheme = localStorage.getItem('theme');
 if (activeTheme == "true") { // прикиньте в локал стородж булевое тру записалось строкоц

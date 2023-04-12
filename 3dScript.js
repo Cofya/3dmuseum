@@ -70,8 +70,27 @@ let description = {
         'Плотность: 2,6 - 2,8 г/см<sup>3</sup>',
         'Формула: CaCO<sub>3</sub>',
         'Сингония- тригональная',
-        `Свойства : разновидность кальцита - исландский шпат обладает двойным лучепреломлением.
-         При сжатии - электризуется. Применяется исландский шпат для изготовления поляризационных приборов.`
+        `Свойства : разновидность кальцита - исландский шпат обладает двойным лучепреломлением (явление раздвоение луча).
+         При сжатии - электризуется. Применяется исландский шпат для изготовления поляризационных приборов.`,
+        `<div>
+           <div class="burger" onclick="burgerToggle(this)" style="width: 13rem; display: flex; align-items: center;">
+            <span>Двойное лучепреломление:</span>
+            <div style=" display: flex; align-items: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                    class="open-info">
+                    <path
+                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="burger-target show">
+        <div class = "props">
+            <img src = "icons/prop_calcite1.jpg" alt = "Кальцит" onclick = "openImg(this)">
+            <img src = "icons/prop_calcite2.jpg" alt = "Кальцит" onclick = "openImg(this)">
+            <img src = "icons/prop_calcite3.jpg" alt = "Кальцит" onclick = "openImg(this)">
+        </div>
+    </div>`
     ),
     cornelian: makeDescription(
         `Сердолик — халцедон, окрашенный в разные оттенки красного или желтовато-красного цвета,
@@ -158,7 +177,7 @@ let description = {
     ),
     magnesite: makeDescription(
         `Магнезит — довольно распространённый минерал.
-         Магнезит назван по месту находки у города Магнезия — область в Фессалии (Греция).`,
+         Магнезит назван по месту находки у города Магнезия - область в Фессалии (Греция).`,
         'Твёрдость: 3,5 - 4,5',
         'Плотность: 3,0 г/см<sup>3</sup>',
         'Формула: MgCO<sub>3</sub>',
