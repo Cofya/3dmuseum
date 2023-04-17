@@ -389,14 +389,24 @@ function addDescription(hrefName) {
         ul.innerHTML = "Это тоже в разработке..."
         return;
     }
+    console.log(hrefName)
+    switch (hrefName) {
+        case "lavaStone1":
+            ul.innerHTML = description[name]['items'] + `<li>Данный лавовый камень - кусочек с лавового потока с вулкана Толбачик (Камчатка) извержения 2012-2013 г.
+            Налёты - это хлориды и сульфаты различных минералов, образованные в процессе остывания и контакта с газами,
+            содержащимися в потоке воздуха.</li>`;
+            break
+        case "shell5":
+            ul.innerHTML = `<li>У данной ракушки проявляется интерференция в тонких плёнках - явление,
+            возникающее в результате разделения луча света при отражении. Поэтому на ракушке такие разноцветные пятна</li>
+                <div class = "props" style = "justify-content: start">
+                    <img src = "icons/inter_shell.jpg" alt = "ракушка" onclick = "openImg(this)"> 
+                </div>`
+            return
+    }
 
     if (description[name]['items'] === "") {
         moreInfo.classList.add("show");
-    }
-    if (hrefName == "lavaStone1") {
-        ul.innerHTML = description[name]['items'] + `<li>Данный лавовый камень - кусочек с лавового потока с вулкана Толбачик (Камчатка) извержения 2012-2013 г.
-         Налёты - это хлориды и сульфаты различных минералов, образованные в процессе остывания и контакта с газами,
-         содержащимися в потоке воздуха.</li>`;
     }
 }
 function toggleControls() {
