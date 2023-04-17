@@ -10,14 +10,15 @@ function darkTheme() {
     svgs[0].classList.toggle("opacity")
     svgs[1].classList.toggle("opacity")
     body.classList.toggle("dark");
-
     if (body.classList.contains('dark')) {
         span.innerHTML = "Включить светлую тему"
         localStorage.setItem("theme", true)
+        scene.background = new THREE.Color(0x525252)
         return;
     }
     span.innerHTML = "Включить тёмную тему"
     localStorage.setItem("theme", false)
+    scene.background = new THREE.Color(0xf4ecd7)
 }
 
 function openBook() {

@@ -263,8 +263,12 @@ let object;
 let permissionControls = true;
 let animateNoUse = true;
 let scene = new THREE.Scene();
-scene.background = new THREE.Color(0xfbf4ea);
-
+activeTheme = localStorage.getItem('theme');
+if (activeTheme == "true") {
+    scene.background = new THREE.Color(0x525252)
+} else {
+    scene.background = new THREE.Color(0xf4ecd7)
+}
 let ambient = new THREE.AmbientLight(0xffffff);
 scene.add(ambient);
 
@@ -348,6 +352,11 @@ function main(name) {
     controls.noPan = true;
     controls.rotateSpeed = window.innerWidth / 500;
 
+    if (document.querySelector("body").classList.contains("dark")) {
+        scene.background = new THREE.Color(0x525252)
+    } else {
+        scene.background = new THREE.Color(0xf4ecd7)
+    }
     loadTexture(texture);
     loadModel(model);
     addDescription(name);
