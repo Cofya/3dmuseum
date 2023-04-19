@@ -398,7 +398,7 @@ function addDescription(hrefName) {
         ul.innerHTML = "Это тоже в разработке..."
         return;
     }
-    console.log(hrefName)
+
     switch (hrefName) {
         case "lavaStone1":
             ul.innerHTML = description[name]['items'] + `<li>Данный лавовый камень - кусочек с лавового потока с вулкана Толбачик (Камчатка) извержения 2012-2013 г.

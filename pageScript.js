@@ -13,14 +13,24 @@ function darkTheme() {
     if (body.classList.contains('dark')) {
         span.innerHTML = "Включить светлую тему"
         localStorage.setItem("theme", true)
-        scene.background = new THREE.Color(0x525252)
+
+        switchScene(1)
         return;
     }
     span.innerHTML = "Включить тёмную тему"
     localStorage.setItem("theme", false)
-    scene.background = new THREE.Color(0xf4ecd7)
+    switchScene(0)
 }
-
+function switchScene(bool) {
+    let color = bool == true ? new THREE.Color(0x525252) : new THREE.Color(0xf4ecd7);
+    let timerid = setInterval(() => {
+        try {
+            scene.background = color;
+            clearInterval(timerid)
+        } catch {
+        }
+    }, 1000)
+}
 function openBook() {
     let block = document.querySelector(".header-button__glossary");
     let span = block.querySelector("span");
