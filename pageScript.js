@@ -23,13 +23,17 @@ function darkTheme() {
 }
 function switchScene(bool) {
     let color = bool == true ? new THREE.Color(0x525252) : new THREE.Color(0xf4ecd7);
-    let timerid = setInterval(() => {
-        try {
-            scene.background = color;
-            clearInterval(timerid)
-        } catch {
-        }
-    }, 1000)
+    try {
+        scene.background = color;
+    } catch {
+        let timerid = setInterval(() => {
+            try {
+                scene.background = color;
+                clearInterval(timerid)
+            } catch {
+            }
+        }, 1000)
+    }
 }
 function openBook() {
     let block = document.querySelector(".header-button__glossary");
